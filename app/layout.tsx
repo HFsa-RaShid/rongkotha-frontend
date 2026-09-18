@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
 import "./globals.css";
-// import Navbar from "@/components/shared/Navbar/Navbar";
-// import Footer from "@/components/shared/Footer/Footer";
+import Footer from "@/components/Shared/Footer";
+import Navbar from "@/components/Shared/Navbar";
+import AnnouncementBar from "@/components/Shared/AnnouncementBar";
+
+
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -31,9 +34,10 @@ export default function RootLayout({
       className={`${jakarta.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        {/* <Navbar /> */}
+        <AnnouncementBar></AnnouncementBar>
+        <Navbar />
         <main className="flex-1">{children}</main>
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
